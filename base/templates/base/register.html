@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content  %}
+
+
+<div class='container bg-light shadow-md p-5 form-layout'>
+    <h3>Create your Account ....</h3>
+    <h5>Start management your Client today</h5>
+    <hr>
+    <br>
+    <form method='POST' action="" >
+        {% csrf_token %}
+        {{form|crispy}}
+        <br>
+        <button type='submit' class='btn btn-primary w-100 btn-block p-2'>Create an Account  &nbsp; <i class="fa fa-user" aria-hidden="true"></i></button>
+    </form>
+    <br>
+    <div class='text-center'>
+        <p>Already Have an Account</p><a href="{% url 'loginPage' %}">Login</a>
+    </div>
+    <br>
+</div>
+
+
+
+
+{% endblock  %}

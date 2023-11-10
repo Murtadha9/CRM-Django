@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+
+
+
+{% block content  %}
+
+    <div class='card'>
+        <strong>
+            {{clientInfo.first_name}}
+            {{clientInfo.last_name|upper}}
+        </strong>
+        <div class='card-body'>
+            <p><strong>ID : </strong>{{clientInfo.id}}</p>
+            <p><strong>Emial : </strong>{{clientInfo.emial}}</p>
+            <p><strong>Phone Number : </strong>{{clientInfo.phone}}</p>
+            <p><strong>Address : </strong>{{clientInfo.address}}</p>
+            <p><strong>City : </strong>{{clientInfo.city}}</p>
+            <p><strong>Country : </strong>{{clientInfo.country}}</p>
+            <p><strong>Date joined : </strong>{{clientInfo.created}}</p>
+        </div>
+    </div>
+    <br>
+
+    <a href="{% url 'dashBoard' %}" class='btn btn-success'> Back to the DashBoard </a>
+    &nbsp;
+    <a href="{% url 'updateClient' clientInfo.id %}" class='btn btn-info'> Update </a>
+    &nbsp;
+    <a href="{% url 'delete' clientInfo.id %}" class='btn btn-danger'> Delete </a>
+
+
+{% endblock %}
